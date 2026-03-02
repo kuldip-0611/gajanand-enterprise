@@ -11,6 +11,8 @@ export default {
         'navy': '#0F172A',
         'gold': '#C9A24D',
         'white': '#FFFFFF',
+        'cream': '#FAF7F2',
+        'cream-light': '#F5F2EB',
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],

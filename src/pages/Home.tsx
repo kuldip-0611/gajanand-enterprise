@@ -6,7 +6,7 @@ const Home = () => {
     {
       name: 'Roman Blind Track Components',
       description: 'Premium components for elegant Roman blind systems',
-      link: '/products#regular-roman-blind',
+      link: '/products/regular-roman-blind',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" />
@@ -18,7 +18,7 @@ const Home = () => {
     {
       name: 'Ripplefold Curtain Track Systems',
       description: 'Smooth and sophisticated ripplefold solutions',
-      link: '/products#ks-type',
+      link: '/products/ks-type',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16M4 8h16M4 12h16M4 16h16M4 20h16" />
@@ -29,7 +29,7 @@ const Home = () => {
     {
       name: 'Motorized Curtain Track Systems',
       description: 'Modern automated curtain systems for convenience',
-      link: '/products#motorized',
+      link: '/products/motorized',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -40,7 +40,7 @@ const Home = () => {
     {
       name: 'Japanese Curtain Track Systems',
       description: 'Traditional Japanese design with modern functionality',
-      link: '/products#japanese',
+      link: '/products/japanese',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" />
@@ -52,7 +52,7 @@ const Home = () => {
     {
       name: 'Bendable & Geometric Tracks',
       description: 'Custom curved and geometric track solutions',
-      link: '/products#bendable',
+      link: '/products/bendable',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -84,79 +84,58 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-cream dark:bg-gray-900">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Animated Background */}
-        <div className="absolute inset-0 gradient-navy">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(201,162,77,0.15),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(201,162,77,0.1),transparent_50%)]" />
-        </div>
-
-        {/* Floating Orbs */}
+        <div className="absolute inset-0 gradient-navy" aria-hidden />
         <motion.div
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-20 left-10 w-72 h-72 bg-gold/20 rounded-full blur-3xl"
+          className="absolute inset-0 w-full h-full"
+          animate={{ scale: [1, 1.08, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-hidden
+          >
+            <source src="/bgplayVideo.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
+        <div
+          className="absolute inset-0 bg-navy/60"
+          aria-hidden
         />
-        <motion.div
-          animate={{
-            y: [0, 20, 0],
-            x: [0, -10, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: 1,
-          }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-gold/10 rounded-full blur-3xl"
-        />
-
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] text-center">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="max-w-5xl mx-auto text-center"
+            className="max-w-5xl mx-auto"
           >
-            <motion.div variants={itemVariants} className="mb-8">
+            <motion.div variants={itemVariants} className="mb-6">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight"
               >
                 <span className="bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent">
-                  Gajanand
+                  GAJANAND ENTERPRISE
                 </span>
-                <br />
-                <span className="text-white">Enterprise</span>
+                <span className="text-white block mt-2 md:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
+                  & quality is priority
+                </span>
               </motion.h1>
             </motion.div>
-
             <motion.p
               variants={itemVariants}
-              className="text-2xl md:text-3xl lg:text-4xl text-gold font-semibold mb-6"
-            >
-              Quality is Priority
-            </motion.p>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl mx-auto leading-relaxed"
             >
               Leading importer of premium curtain track system components,
               delivering excellence and reliability to the architectural industry.
             </motion.p>
-
             <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -180,8 +159,6 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -203,8 +180,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-24 md:py-32 bg-white dark:bg-gray-900">
+      <section className="py-24 md:py-32 bg-cream dark:bg-gray-900">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -226,8 +202,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Product Categories Overview */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+      <section className="py-24 md:py-32 section-gradient-cream dark:bg-gray-800 dark:bg-none">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -259,7 +234,7 @@ const Home = () => {
                 className="group"
               >
                 <Link to={category.link}>
-                  <div className="h-full bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700">
+                  <div className="h-full bg-white/90 dark:bg-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-cream-light dark:border-gray-700">
                     <motion.div 
                       className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center mb-6 text-navy group-hover:scale-110 transition-transform duration-300"
                       whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}

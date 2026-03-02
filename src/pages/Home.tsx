@@ -16,13 +16,23 @@ const Home = () => {
       ),
     },
     {
-      name: 'Ripplefold Curtain Track Systems',
-      description: 'Smooth and sophisticated ripplefold solutions',
+      name: 'Square Track Systems',
+      description: 'Compact square profile tracks for straight installations',
       link: '/products/ks-type',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16M4 8h16M4 12h16M4 16h16M4 20h16" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l2 2 4-4M6 14l2 2 4-4" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Round Track Systems',
+      description: 'Reinforced round profile tracks for heavy curtains',
+      link: '/products/ds-type',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16v16H4V4zm2 2v12h12V6H6z" />
         </svg>
       ),
     },

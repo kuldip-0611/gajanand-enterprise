@@ -11,10 +11,8 @@
   </head>
   <body>
     <script>
-      // Prevent theme flash - set theme before React renders
       (function() {
-        const theme = localStorage.getItem('theme') || 
-          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var theme = localStorage.getItem('theme') || 'light';
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
         } else {

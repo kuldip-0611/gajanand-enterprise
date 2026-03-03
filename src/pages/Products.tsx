@@ -5,9 +5,23 @@ import { products } from '../data/products';
 import ImageModal from '../components/ImageModal';
 
 const PRODUCTS_HERO_ROTATE_MS = 3500;
-const productsHeroImages = Array.from(
-  new Set(products.flatMap((p) => p.exampleImages ?? []))
-);
+const ROMAN_PRODUCT_IDS = ['regular-roman-blind', 'tubeless-roman-blind'];
+const romanExampleImages = products
+  .filter((p) => ROMAN_PRODUCT_IDS.includes(p.id))
+  .flatMap((p) => p.exampleImages ?? []);
+const curtainExampleImages = products
+  .filter((p) => !ROMAN_PRODUCT_IDS.includes(p.id))
+  .flatMap((p) => p.exampleImages ?? []);
+
+const productsHeroImages = (() => {
+  const out: string[] = [];
+  const max = Math.max(romanExampleImages.length, curtainExampleImages.length);
+  for (let i = 0; i < max; i++) {
+    if (i < romanExampleImages.length) out.push(romanExampleImages[i]);
+    if (i < curtainExampleImages.length) out.push(curtainExampleImages[i]);
+  }
+  return out;
+})();
 
 const Products = () => {
   const [modalImage, setModalImage] = useState<{ src: string; caption: string } | null>(null);

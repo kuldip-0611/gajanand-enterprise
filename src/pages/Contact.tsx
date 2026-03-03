@@ -139,12 +139,12 @@ const Contact = () => {
       label: 'Address',
       value: (
         <>
-          B-701, Ocean Colina Flats, Nr. Vardan Tower,<br />
-          B/h. Anjan Greens, Prahladnagar,<br />
-          Ahmedabad-380013<br />
-          <br />
-          B-101 Sector-5, Nirmanagar,<br />
-          Ahmedabad-382481
+          B-701 Ocean Colina,<br />
+          Bh. Arjun Greens,<br />
+          Nr. Vardan Tower,<br />
+          Pragatinagar,<br />
+          Naranpura,<br />
+          Ahmedabad-380013
         </>
       ),
       href: null,

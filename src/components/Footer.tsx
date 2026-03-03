@@ -85,8 +85,10 @@ const Footer = () => {
                 </svg>
                 9825048955 / 9925048955
               </a>
-              <p className="mt-4 opacity-75 text-sm">
-                Ahmedabad, Gujarat, India
+              <p className="mt-4 opacity-75 text-sm leading-relaxed">
+                B-701 Ocean Colina, Bh. Arjun Greens,<br />
+                Nr. Vardan Tower, Pragatinagar, Naranpura,<br />
+                Ahmedabad-380013
               </p>
             </div>
           </motion.div>

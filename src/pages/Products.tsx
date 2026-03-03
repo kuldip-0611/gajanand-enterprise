@@ -101,7 +101,7 @@ const Products = () => {
               Gajanand Enterprise supplies high-quality curtain track and blind system components, engineered for smooth operation, durability, and architectural flexibility. Our imported aluminium track systems are suitable for residential, commercial, and hospitality projects.
             </p>
             <p className="text-lg md:text-xl text-gold mt-4 font-semibold">
-              All systems are available in custom cut sizes, with standard stock lengths up to 5.8 meters (≈19 feet).
+              Custom cut sizes available. Standard lengths up to 5.8 meters (19 ft).
             </p>
           </motion.div>
         </div>

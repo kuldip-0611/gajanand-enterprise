@@ -10,6 +10,7 @@ export interface Product {
   applications: string[];
   features: string[];
   operationOptions?: string[];
+  operationOptionImages?: ProductAccessory[];
   bendingAvailable?: string[];
   images: string[];
   accessories?: ProductAccessory[];
@@ -123,11 +124,13 @@ export const products: Product[] = [
       'Simple Row Runner',
       'Ripplefold Carrier System',
     ],
+    operationOptionImages: [
+      { name: 'Square Track Simple', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track Simple Assembled.jpeg' },
+      { name: 'Square Track Ripple', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track- Ripple/Square Track Ripple Assembled.jpeg' },
+      { name: 'Square Track Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Mindi Runner/Square Track Mindi Assembled.jpeg' },
+    ],
     images: [
-      '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track Simple Assembled.jpeg',
       '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Square/Square Track- Ripple/Square Track Ripple Assembled.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Square/Square Track-Mindi Runner/Square Track Mindi Assembled.jpeg',
     ],
     accessories: [
       { name: 'Acrylic Stick', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Accesories/Acrylic Stick.jpeg' },
@@ -177,14 +180,14 @@ export const products: Product[] = [
       'Simple Row Runner',
       'Ripplefold Carrier System',
     ],
+    operationOptionImages: [
+      { name: 'Round Track Simple', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track Simple Assembled.jpeg' },
+      { name: 'Round Track Simple (2)', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track Simple Assembled (2).jpeg' },
+      { name: 'Round Track Ripple', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track- Ripple/Round Track Assembled Ripple.jpeg' },
+      { name: 'Round Track Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Mindi Runner/Round Track Mindi Assembled.jpeg' },
+    ],
     images: [
-      '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track Simple Assembled.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track Simple Assembled (2).jpeg',
       '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Round/Round Track- Ripple/Round Track Assembled Ripple.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Round/Round Track- Ripple/Round Track.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Round/Round Track Mindi Runner/Round Track Mindi Assembled.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Round/Round Track Mindi Runner/Round Track.jpeg',
     ],
     accessories: [
       { name: 'Acrylic Stick', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Accesories/Acrylic Stick.jpeg' },
@@ -236,10 +239,13 @@ export const products: Product[] = [
       'Simple Row Runner',
       'Ripplefold Carrier System',
     ],
+    operationOptionImages: [
+      { name: 'Japanese Track Simple', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Japanese Track White.jpeg' },
+      { name: 'Japanese Track Ripple', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/Japanese Track White.jpeg' },
+      { name: 'Japanese Track Ripple (2)', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/WhatsApp Image 2026-01-02 at 9.18.27 AM.jpeg' },
+    ],
     images: [
       '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Japanese Track White.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/Japanese Track White.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/WhatsApp Image 2026-01-02 at 9.18.27 AM.jpeg',
     ],
     accessories: [
       { name: 'Acrylic Stick', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Acrylic Stick.jpeg' },

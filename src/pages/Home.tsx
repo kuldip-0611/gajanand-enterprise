@@ -222,23 +222,25 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <section className="py-24 md:py-32 bg-cream dark:bg-gray-900">
+      <section className="py-24 md:py-32 bg-[#f8f9fb] dark:bg-gray-900">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-left"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-8 whitespace-nowrap">
               Welcome to Gajanand Enterprise
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
               We specialize in importing high-quality curtain track system components
-              for the architectural and interior design industry. Our commitment to
-              excellence ensures that every product meets the highest standards of
-              quality and reliability.
+              for the architectural and interior design industry.
+            </p>
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed">
+              Our commitment to excellence ensures every product meets
+              the highest standards of quality and reliability.
             </p>
           </motion.div>
         </div>

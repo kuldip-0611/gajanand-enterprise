@@ -134,16 +134,46 @@ const ProductDetail = () => {
                 <h3 className="text-2xl font-bold text-navy dark:text-white mb-6">
                   Operation Options
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {product.operationOptions.map((option, i) => (
-                    <div
-                      key={i}
-                      className="bg-white dark:bg-gray-800 rounded-2xl p-4 border border-gold/20"
-                    >
-                      <span className="text-lg text-gray-700 dark:text-gray-300">{option}</span>
-                    </div>
-                  ))}
-                </div>
+                {product.operationOptionImages && product.operationOptionImages.length > 0 && (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+                    {product.operationOptionImages.map((opt) => (
+                      <motion.div
+                        key={opt.image}
+                        variants={itemVariants}
+                        whileHover={{ y: -2 }}
+                        className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                        onClick={() => setModalImage({ src: opt.image, caption: opt.name })}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => e.key === 'Enter' && setModalImage({ src: opt.image, caption: opt.name })}
+                      >
+                        <div className="aspect-[4/3] bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={opt.image}
+                            alt={opt.name}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                        <p className="p-2.5 text-xs font-medium text-navy dark:text-white text-gray-700 dark:text-gray-300 text-center truncate">
+                          {opt.name}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+                {(!product.operationOptionImages || product.operationOptionImages.length === 0) && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {product.operationOptions.map((option, i) => (
+                      <div
+                        key={i}
+                        className="bg-white dark:bg-gray-800 rounded-2xl p-4 border border-gold/20"
+                      >
+                        <span className="text-lg text-gray-700 dark:text-gray-300">{option}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             )}
 
@@ -210,11 +240,8 @@ const ProductDetail = () => {
             <motion.div variants={itemVariants} className="mt-12 lg:mt-16">
               <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                 <h3 className="text-2xl font-bold text-navy dark:text-white mb-6">
-                  Reference Gallery
+                  Our Installations
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl">
-                  Product in use and real-world installations.
-                </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {product.exampleImages.map((src) => (
                     <motion.div

@@ -16,6 +16,8 @@ const Header = () => {
   }, []);
 
   const isActive = (path: string) => location.pathname === path;
+  const isHomePage = location.pathname === '/';
+  const useLightHeaderText = isHomePage && !scrolled && !isMobileMenuOpen;
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -29,7 +31,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled || isMobileMenuOpen
           ? 'glass dark:glass-dark shadow-xl border-b border-gray-200/50 dark:border-gray-700/50'
           : 'bg-transparent'
@@ -56,10 +58,16 @@ const Header = () => {
               />
             </motion.div>
             <div>
-              <h1 className="text-lg font-bold text-navy dark:text-white group-hover:text-gold transition-colors">
+              <h1
+                className={`text-lg font-bold group-hover:text-gold transition-colors ${
+                  useLightHeaderText ? 'text-white' : 'text-navy dark:text-white'
+                }`}
+              >
                 Gajanand Enterprise
               </h1>
-              <p className="text-xs text-gold font-medium">Quality is Priority</p>
+              <p className={`text-xs font-medium ${useLightHeaderText ? 'text-gold' : 'text-gray-600 dark:text-gray-400'}`}>
+                Quality is Priority
+              </p>
             </div>
           </Link>
 
@@ -75,7 +83,9 @@ const Header = () => {
                   className={`block text-sm font-medium ${
                     isActive(item.path)
                       ? 'text-gold'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-gold'
+                      : useLightHeaderText
+                        ? 'text-white hover:text-gold'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-gold'
                   }`}
                   whileHover={{ scale: 1.05 }}
                 >
@@ -99,7 +109,11 @@ const Header = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+              className={`md:hidden p-2.5 rounded-xl ${
+                useLightHeaderText
+                  ? 'bg-white/10 text-white'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
+              }`}
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">

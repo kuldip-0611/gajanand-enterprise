@@ -6,7 +6,12 @@ import { products } from '../data/products';
 const HERO_ROTATE_INTERVAL_MS = 2500;
 
 const heroImages = Array.from(
-  new Set(products.flatMap((p) => p.exampleImages ?? []))
+  new Set(
+    products.flatMap((p) => [
+      ...(p.images ?? []),
+      ...(p.exampleImages ?? []),
+    ])
+  )
 );
 
 const Home = () => {
@@ -153,7 +158,7 @@ const Home = () => {
                   GAJANAND ENTERPRISE
                 </span>
                 <span className="text-white block mt-2 md:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
-                  & quality is priority
+                  Quality is Priority
                 </span>
               </motion.h1>
             </motion.div>

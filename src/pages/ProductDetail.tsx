@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { getProductById } from '../data/products';
 import ProductImageCarousel from '../components/ProductImageCarousel';
+import ImageModal from '../components/ImageModal';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -23,6 +25,7 @@ const itemVariants = {
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const product = id ? getProductById(id) : undefined;
+  const [modalImage, setModalImage] = useState<{ src: string; caption?: string } | null>(null);
 
   if (!product) {
     return <Navigate to="/products" replace />;
@@ -179,7 +182,11 @@ const ProductDetail = () => {
                       key={acc.image}
                       variants={itemVariants}
                       whileHover={{ y: -2 }}
-                      className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
+                      className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                      onClick={() => setModalImage({ src: acc.image, caption: acc.name })}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => e.key === 'Enter' && setModalImage({ src: acc.image, caption: acc.name })}
                     >
                       <div className="aspect-[4/3] bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
                         <img
@@ -214,7 +221,11 @@ const ProductDetail = () => {
                       key={src}
                       variants={itemVariants}
                       whileHover={{ y: -2 }}
-                      className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
+                      className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                      onClick={() => setModalImage({ src })}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => e.key === 'Enter' && setModalImage({ src })}
                     >
                       <div className="aspect-[4/3] bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
                         <img
@@ -266,6 +277,12 @@ const ProductDetail = () => {
           </motion.div>
         </motion.div>
       </div>
+      <ImageModal
+        src={modalImage?.src ?? null}
+        caption={modalImage?.caption}
+        isOpen={modalImage !== null}
+        onClose={() => setModalImage(null)}
+      />
     </div>
   );
 };

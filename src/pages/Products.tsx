@@ -1,8 +1,26 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
+import ImageModal from '../components/ImageModal';
+
+const PRODUCTS_HERO_ROTATE_MS = 3500;
+const productsHeroImages = Array.from(
+  new Set(products.flatMap((p) => p.exampleImages ?? []))
+);
 
 const Products = () => {
+  const [modalImage, setModalImage] = useState<{ src: string; caption: string } | null>(null);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    if (productsHeroImages.length <= 1) return;
+    const id = setInterval(
+      () => setHeroIndex((i) => (i + 1) % productsHeroImages.length),
+      PRODUCTS_HERO_ROTATE_MS
+    );
+    return () => clearInterval(id);
+  }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -23,7 +41,25 @@ const Products = () => {
   return (
     <div className="min-h-screen bg-cream dark:bg-gray-900 pt-20">
       <section className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 gradient-navy">
+        <div className="absolute inset-0">
+          {productsHeroImages.length > 0 ? (
+            <AnimatePresence initial={false}>
+              <motion.img
+                key={productsHeroImages[heroIndex]}
+                src={productsHeroImages[heroIndex]}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                aria-hidden
+              />
+            </AnimatePresence>
+          ) : null}
+        </div>
+        <div className="absolute inset-0 bg-navy/65" aria-hidden />
+        <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(201,162,77,0.15),transparent_50%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(201,162,77,0.1),transparent_50%)]" />
         </div>
@@ -72,7 +108,23 @@ const Products = () => {
                   className="h-full bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:border-gold/30 transition-all duration-300 flex flex-col"
                 >
                   {product.images[0] && (
-                    <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-700">
+                    <div
+                      className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-700 cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setModalImage({ src: product.images[0], caption: product.title });
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setModalImage({ src: product.images[0], caption: product.title });
+                        }
+                      }}
+                    >
                       <img
                         src={product.images[0]}
                         alt={product.title}
@@ -99,6 +151,13 @@ const Products = () => {
           ))}
         </motion.div>
       </div>
+      <ImageModal
+        src={modalImage?.src ?? null}
+        alt={modalImage?.caption}
+        caption={modalImage?.caption}
+        isOpen={modalImage !== null}
+        onClose={() => setModalImage(null)}
+      />
     </div>
   );
 };

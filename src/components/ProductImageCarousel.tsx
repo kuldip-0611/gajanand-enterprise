@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useState } from 'react';
+import ImageModal from './ImageModal';
 
 interface ProductImageCarouselProps {
   images: string[];
@@ -10,6 +11,7 @@ interface ProductImageCarouselProps {
 
 const ProductImageCarousel = ({ images, productTitle, variants }: ProductImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [modalSrc, setModalSrc] = useState<string | null>(null);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -37,7 +39,11 @@ const ProductImageCarousel = ({ images, productTitle, variants }: ProductImageCa
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-              className="absolute inset-0"
+              className="absolute inset-0 cursor-pointer"
+              onClick={() => setModalSrc(images[currentIndex])}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && setModalSrc(images[currentIndex])}
             >
               <img
                 src={images[currentIndex]}
@@ -92,6 +98,13 @@ const ProductImageCarousel = ({ images, productTitle, variants }: ProductImageCa
           </div>
         )}
       </div>
+      <ImageModal
+        src={modalSrc}
+        alt={`${productTitle} - Image ${currentIndex + 1}`}
+        caption={`${productTitle} (${currentIndex + 1} / ${images.length})`}
+        isOpen={modalSrc !== null}
+        onClose={() => setModalSrc(null)}
+      />
     </motion.div>
   );
 };

@@ -1,7 +1,24 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { products } from '../data/products';
+
+const HERO_ROTATE_INTERVAL_MS = 2500;
+
+const heroImages = Array.from(
+  new Set(products.flatMap((p) => p.exampleImages ?? []))
+);
 
 const Home = () => {
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    if (heroImages.length <= 1) return;
+    const id = setInterval(() => {
+      setHeroIndex((i) => (i + 1) % heroImages.length);
+    }, HERO_ROTATE_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, []);
   const productCategories = [
     {
       name: 'Roman Blind Track Components',
@@ -97,22 +114,23 @@ const Home = () => {
     <div className="min-h-screen bg-cream dark:bg-gray-900">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 gradient-navy" aria-hidden />
-        <motion.div
-          className="absolute inset-0 w-full h-full"
-          animate={{ scale: [1, 1.08, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden
-          >
-            <source src="/bgplayVideo.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
+        <div className="absolute inset-0 w-full h-full">
+          {heroImages.length > 0 ? (
+            <AnimatePresence initial={false}>
+              <motion.img
+                key={heroImages[heroIndex]}
+                src={heroImages[heroIndex]}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.2 }}
+                aria-hidden
+              />
+            </AnimatePresence>
+          ) : null}
+        </div>
         <div
           className="absolute inset-0 bg-navy/60"
           aria-hidden

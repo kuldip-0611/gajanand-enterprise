@@ -185,7 +185,7 @@ const ProductDetail = () => {
                         <img
                           src={acc.image}
                           alt={acc.name}
-                          className="w-full h-full object-contain p-2"
+                          className="w-full h-full object-cover"
                           loading="lazy"
                         />
                       </div>
@@ -203,10 +203,10 @@ const ProductDetail = () => {
             <motion.div variants={itemVariants} className="mt-12 lg:mt-16">
               <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                 <h3 className="text-2xl font-bold text-navy dark:text-white mb-6">
-                  Examples
+                  Reference Gallery
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl">
-                  Sample installations and reference images for this product.
+                  Product in use and real-world installations.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {product.exampleImages.map((src) => (

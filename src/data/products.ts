@@ -127,9 +127,7 @@ export const products: Product[] = [
       '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track Simple Assembled.jpeg',
       '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track.jpeg',
       '/Curtain Tracks/Curtain Tracks- Square/Square Track- Ripple/Square Track Ripple Assembled.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Square/Square Track- Ripple/Square Track.jpeg',
       '/Curtain Tracks/Curtain Tracks- Square/Square Track-Mindi Runner/Square Track Mindi Assembled.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Square/Square Track-Mindi Runner/Square Track.jpeg',
     ],
     accessories: [
       { name: 'Acrylic Stick', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Accesories/Acrylic Stick.jpeg' },
@@ -242,9 +240,6 @@ export const products: Product[] = [
       '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Japanese Track White.jpeg',
       '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/Japanese Track White.jpeg',
       '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/WhatsApp Image 2026-01-02 at 9.18.27 AM.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Japanese Track/WhatsApp Image 2026-02-20 at 2.26.56 PM.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Japanese Track/WhatsApp Image 2026-02-20 at 2.27.05 PM.jpeg',
-      '/Curtain Tracks/Curtain Tracks- Japanese Track/WhatsApp Image 2026-02-20 at 2.27.07 PM.jpeg',
     ],
     accessories: [
       { name: 'Acrylic Stick', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Acrylic Stick.jpeg' },

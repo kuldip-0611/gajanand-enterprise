@@ -6,12 +6,7 @@ import { products } from '../data/products';
 const HERO_ROTATE_INTERVAL_MS = 2500;
 
 const heroImages = Array.from(
-  new Set(
-    products.flatMap((p) => [
-      ...(p.images ?? []),
-      ...(p.exampleImages ?? []),
-    ])
-  )
+  new Set(products.flatMap((p) => p.exampleImages ?? []))
 );
 
 const Home = () => {

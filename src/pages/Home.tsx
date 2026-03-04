@@ -185,7 +185,7 @@ const Home = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/products"
-                  className="btn-primary inline-block"
+                  className="inline-block px-8 py-4 rounded-2xl font-semibold text-base border-2 border-white text-white bg-transparent hover:bg-white hover:text-navy transition-all duration-300"
                 >
                   Explore Products
                 </Link>
@@ -231,7 +231,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-left"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-8 whitespace-nowrap">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-center font-bold text-navy dark:text-white mb-8 whitespace-wrap">
               Welcome to Gajanand Enterprise
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mb-4">

@@ -25,11 +25,10 @@ const ProductImageCarousel = ({ images, productTitle, variants }: ProductImageCa
     setCurrentIndex(index);
   };
 
+  const [modalIndex, setModalIndex] = useState(0);
+
   return (
     <motion.div variants={variants} className="lg:col-span-2">
-      <h3 className="text-2xl font-bold text-navy dark:text-white mb-6">
-        Product Images
-      </h3>
       <div className="relative group max-w-3xl mx-auto">
         <div className="relative overflow-hidden rounded-3xl shadow-xl aspect-[4/3] max-h-[500px] bg-gray-100 dark:bg-gray-800">
           <AnimatePresence mode="wait">
@@ -40,10 +39,18 @@ const ProductImageCarousel = ({ images, productTitle, variants }: ProductImageCa
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
               className="absolute inset-0 cursor-pointer"
-              onClick={() => setModalSrc(images[currentIndex])}
+              onClick={() => {
+                setModalIndex(currentIndex);
+                setModalSrc(images[currentIndex]);
+              }}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setModalSrc(images[currentIndex])}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  setModalIndex(currentIndex);
+                  setModalSrc(images[currentIndex]);
+                }
+              }}
             >
               <img
                 src={images[currentIndex]}
@@ -100,10 +107,13 @@ const ProductImageCarousel = ({ images, productTitle, variants }: ProductImageCa
       </div>
       <ImageModal
         src={modalSrc}
-        alt={`${productTitle} - Image ${currentIndex + 1}`}
-        caption={`${productTitle} (${currentIndex + 1} / ${images.length})`}
+        alt={`${productTitle} - Image ${modalIndex + 1}`}
+        caption={`${productTitle}`}
         isOpen={modalSrc !== null}
         onClose={() => setModalSrc(null)}
+        images={images}
+        currentIndex={modalIndex}
+        onIndexChange={(i) => setModalIndex(i)}
       />
     </motion.div>
   );

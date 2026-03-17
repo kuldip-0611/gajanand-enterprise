@@ -238,10 +238,30 @@ const Home = () => {
               We specialize in importing high-quality curtain track system components
               for the architectural and interior design industry.
             </p>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mb-12">
               Our commitment to excellence ensures every product meets
               the highest standards of quality and reliability.
             </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          >
+            <div className="text-center p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700">
+              <p className="text-4xl md:text-5xl font-bold text-gold mb-2">10+</p>
+              <p className="text-lg font-semibold text-navy dark:text-white">Years of experience</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700">
+              <p className="text-4xl md:text-5xl font-bold text-gold mb-2">500+</p>
+              <p className="text-lg font-semibold text-navy dark:text-white">Installations</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700">
+              <p className="text-4xl md:text-5xl font-bold text-gold mb-2">Trusted</p>
+              <p className="text-lg font-semibold text-navy dark:text-white">By interior designers</p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -279,25 +299,6 @@ const Home = () => {
               >
                 <Link to={category.link}>
                   <div className="h-full bg-white/90 dark:bg-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-cream-light dark:border-gray-700">
-                    <motion.div 
-                      className="w-16 h-16 rounded-2xl gradient-gold flex items-center justify-center mb-6 text-navy group-hover:scale-110 transition-transform duration-300"
-                      whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                    >
-                      <motion.div
-                        animate={{ 
-                          y: [0, -5, 0],
-                        }}
-                        transition={{ 
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.2
-                        }}
-                      >
-                        {category.icon}
-                      </motion.div>
-                    </motion.div>
                     <h3 className="text-2xl font-bold text-navy dark:text-white mb-4 group-hover:text-gold transition-colors">
                       {category.name}
                     </h3>

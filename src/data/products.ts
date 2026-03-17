@@ -121,13 +121,14 @@ export const products: Product[] = [
       'Smooth runner movement',
     ],
     operationOptions: [
-      'Simple Row Runner',
-      'Ripplefold Carrier System',
+      'Row Runner',
+      'Ripplefold Carrier',
+      'Mindi Runner',
     ],
     operationOptionImages: [
-      { name: 'Square Track Simple', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track Simple Assembled.jpeg' },
-      { name: 'Square Track Ripple', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track- Ripple/Square Track Ripple Assembled.jpeg' },
-      { name: 'Square Track Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Mindi Runner/Square Track Mindi Assembled.jpeg' },
+      { name: 'Row Runner', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track Simple Assembled.jpeg' },
+      { name: 'Ripplefold Carrier', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track- Ripple/Square Track Ripple Assembled.jpeg' },
+      { name: 'Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Square/Square Track-Mindi Runner/Square Track Mindi Assembled.jpeg' },
     ],
     images: [
       '/Curtain Tracks/Curtain Tracks- Square/Square Track-Simple/Square Track.jpeg',
@@ -177,14 +178,14 @@ export const products: Product[] = [
       'Smooth and silent movement',
     ],
     operationOptions: [
-      'Simple Row Runner',
-      'Ripplefold Carrier System',
+      'Row Runner',
+      'Ripplefold Carrier',
+      'Mindi Runner',
     ],
     operationOptionImages: [
-      { name: 'Round Track Simple', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track Simple Assembled.jpeg' },
-      { name: 'Round Track Simple (2)', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track Simple Assembled (2).jpeg' },
-      { name: 'Round Track Ripple', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track- Ripple/Round Track Assembled Ripple.jpeg' },
-      { name: 'Round Track Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Mindi Runner/Round Track Mindi Assembled.jpeg' },
+      { name: 'Row Runner', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track Simple Assembled.jpeg' },
+      { name: 'Ripplefold Carrier', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track- Ripple/Round Track Ripple Assembled.jpeg' },
+      { name: 'Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Round/Round Track Mindi Runner/Round Track Mindi Assembled.jpeg' },
     ],
     images: [
       '/Curtain Tracks/Curtain Tracks- Round/Round Track Simple/Round Track.jpeg',
@@ -236,13 +237,14 @@ export const products: Product[] = [
       'Smooth operation',
     ],
     operationOptions: [
-      'Simple Row Runner',
-      'Ripplefold Carrier System',
+      'Row Runner',
+      'Ripplefold Carrier',
+      'Mindi Runner',
     ],
     operationOptionImages: [
-      { name: 'Japanese Track Simple', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Japanese Track White.jpeg' },
-      { name: 'Japanese Track Ripple', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/Japanese Track White.jpeg' },
-      { name: 'Japanese Track Ripple (2)', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/WhatsApp Image 2026-01-02 at 9.18.27 AM.jpeg' },
+      { name: 'Row Runner', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Japanese Track White.jpeg' },
+      { name: 'Ripplefold Carrier', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/Japanese Track White.jpeg' },
+      { name: 'Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Runner.jpeg' },
     ],
     images: [
       '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Japanese Track White.jpeg',
@@ -254,6 +256,7 @@ export const products: Product[] = [
       { name: 'Japanese Ceiling Bracket', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Japnaese Ceiling Bracket.jpeg' },
       { name: 'Runner', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Runner.jpeg' },
       { name: 'Ripplefold Carrier', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/Accesories/Ripplefold Carrier.jpeg' },
+      { name: 'Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Runner.jpeg' },
     ],
     exampleImages: [
       '/Curtain Tracks/Curtain Tracks- Japanese Track/WhatsApp Image 2026-02-20 at 2.26.56 PM.jpeg',

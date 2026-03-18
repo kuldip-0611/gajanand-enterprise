@@ -290,7 +290,7 @@ const ProductDetail = () => {
             </motion.div>
           )}
 
-          {['ks-type', 'ds-type', 'japanese'].includes(product.id) && (
+          {['japanese'].includes(product.id) && (
             <motion.div
               variants={itemVariants}
               className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700"

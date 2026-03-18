@@ -22,6 +22,11 @@ const itemVariants = {
   },
 };
 
+const JAPANESE_BROWN_IMAGE =
+  '/Curtain Tracks/Curtain Tracks- Japanese Track/jAPANESE BROWN.jpeg';
+const JAPANESE_WOOD_IMAGE =
+  '/Curtain Tracks/Curtain Tracks- Japanese Track/jAPANESE WODDEN.jpeg';
+
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const product = id ? getProductById(id) : undefined;
@@ -296,23 +301,41 @@ const ProductDetail = () => {
               className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700"
             >
               <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">Available in:</h3>
-              <div className="flex flex-wrap items-center gap-6">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setModalImage({
+                      src: JAPANESE_BROWN_IMAGE,
+                      caption: 'Japanese track — Brown',
+                    })
+                  }
+                  className="flex items-center gap-3 rounded-2xl px-3 py-2 border border-transparent hover:border-gold/40 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                >
                   <span
-                    className="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-inner"
+                    className="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-inner shrink-0"
                     style={{ backgroundColor: '#5c4033' }}
-                    title="Brown"
+                    aria-hidden
                   />
                   <span className="text-gray-700 dark:text-gray-300 font-medium">Brown</span>
-                </div>
-                <div className="flex items-center gap-3">
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setModalImage({
+                      src: JAPANESE_WOOD_IMAGE,
+                      caption: 'Japanese track — Wood color',
+                    })
+                  }
+                  className="flex items-center gap-3 rounded-2xl px-3 py-2 border border-transparent hover:border-gold/40 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                >
                   <span
-                    className="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-inner"
+                    className="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 shadow-inner shrink-0"
                     style={{ backgroundColor: '#c4a35a' }}
-                    title="Wood"
+                    aria-hidden
                   />
                   <span className="text-gray-700 dark:text-gray-300 font-medium">Wood Color</span>
-                </div>
+                </button>
               </div>
             </motion.div>
           )}

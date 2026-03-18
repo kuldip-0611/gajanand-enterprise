@@ -134,19 +134,24 @@ const ProductDetail = () => {
                 <h3 className="text-2xl font-bold text-navy dark:text-white mb-6">
                   Operation Options
                 </h3>
-                {product.operationOptionImages && product.operationOptionImages.length > 0 && (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+                {product.id !== 'japanese' && product.operationOptionImages && product.operationOptionImages.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-2">
                     {product.operationOptionImages.map((opt) => (
                       <motion.div
                         key={opt.image}
                         variants={itemVariants}
                         whileHover={{ y: -2 }}
-                        className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                        className="rounded-2xl overflow-hidden border border-gray-200/80 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                         onClick={() => setModalImage({ src: opt.image, caption: opt.name })}
                         role="button"
                         tabIndex={0}
                         onKeyDown={(e) => e.key === 'Enter' && setModalImage({ src: opt.image, caption: opt.name })}
                       >
+                        <div className="px-4 py-3 bg-gray-50 dark:bg-gray-900/30 border-b border-gray-100 dark:border-gray-700">
+                          <p className="text-sm font-semibold text-navy dark:text-white text-center leading-snug line-clamp-2">
+                            {opt.name}
+                          </p>
+                        </div>
                         <div className="aspect-[4/3] bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
                           <img
                             src={opt.image}
@@ -155,14 +160,11 @@ const ProductDetail = () => {
                             loading="lazy"
                           />
                         </div>
-                        <p className="p-2.5 text-xs font-medium text-navy dark:text-white text-gray-700 dark:text-gray-300 text-center truncate">
-                          {opt.name}
-                        </p>
                       </motion.div>
                     ))}
                   </div>
                 )}
-                {(!product.operationOptionImages || product.operationOptionImages.length === 0) && (
+                {(product.id === 'japanese' || !product.operationOptionImages || product.operationOptionImages.length === 0) && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {product.operationOptions.map((option, i) => (
                       <div

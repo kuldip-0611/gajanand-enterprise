@@ -256,7 +256,7 @@ export const products: Product[] = [
       { name: 'Japanese Ceiling Bracket', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Japnaese Ceiling Bracket.jpeg' },
       { name: 'Runner', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Runner.jpeg' },
       { name: 'Ripplefold Carrier', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Ripple/Accesories/Ripplefold Carrier.jpeg' },
-      { name: 'Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Simple/Accesories/Runner.jpeg' },
+      { name: 'Mindi Runner', image: '/Curtain Tracks/Curtain Tracks- Japanese Track/Japanese Mindi/Accesories/Mindi Runner.jpg' },
     ],
     exampleImages: [
       '/Curtain Tracks/Curtain Tracks- Japanese Track/WhatsApp Image 2026-02-20 at 2.26.56 PM.jpeg',

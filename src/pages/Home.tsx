@@ -49,7 +49,7 @@ const Home = () => {
     {
       name: 'Square Track Systems',
       description: 'Compact square profile tracks for straight installations',
-      link: '/products/ks-type',
+      link: '/products/square-track-systems',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16M4 8h16M4 12h16M4 16h16M4 20h16" />
@@ -60,7 +60,7 @@ const Home = () => {
     {
       name: 'Round Track Systems',
       description: 'Reinforced round profile tracks for heavy curtains',
-      link: '/products/ds-type',
+      link: '/products/round-track-systems',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16v16H4V4zm2 2v12h12V6H6z" />
@@ -251,12 +251,7 @@ const Home = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch"
           >
             <div className="group flex flex-col h-full min-h-[300px] md:min-h-[320px] p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-              <div className="mx-auto w-12 h-12 rounded-2xl gradient-gold flex items-center justify-center text-navy shadow-md shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
+            
               <div className="flex-1 flex flex-col items-center justify-center text-center py-4">
                 <p className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
                   <span className="text-gold">10+</span>
@@ -270,12 +265,7 @@ const Home = () => {
               </p>
             </div>
             <div className="group flex flex-col h-full min-h-[300px] md:min-h-[320px] p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-              <div className="mx-auto w-12 h-12 rounded-2xl gradient-gold flex items-center justify-center text-navy shadow-md shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7h16M4 12h16M4 17h16" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7v10M17 7v10" />
-                </svg>
-              </div>
+              
               <div className="flex-1 flex flex-col items-center justify-center text-center py-4">
                 <p className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
                   <span className="text-gold">5000+</span>
@@ -289,12 +279,6 @@ const Home = () => {
               </p>
             </div>
             <div className="group flex flex-col h-full min-h-[300px] md:min-h-[320px] p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-              <div className="mx-auto w-12 h-12 rounded-2xl gradient-gold flex items-center justify-center text-navy shadow-md shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                </svg>
-              </div>
               <div className="flex-1 flex flex-col items-center justify-center text-center py-4 px-1">
                 <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gold leading-tight">
                   Built on Excellence,

@@ -107,7 +107,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: 'ks-type',
+    id: 'square-track-systems',
     title: 'Square Track Systems',
     description: 'Square track systems are compact and efficient, designed for standard straight curtain installations. They provide reliable sliding performance and are ideal for everyday curtain applications.',
     applications: [
@@ -164,7 +164,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: 'ds-type',
+    id: 'round-track-systems',
     title: 'Round Track Systems',
     description: 'Round track systems are designed for enhanced strength and stability. With a reinforced profile, these tracks are suitable for heavier curtains and wider spans while maintaining smooth operation.',
     applications: [

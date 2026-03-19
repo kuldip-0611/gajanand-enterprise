@@ -200,9 +200,6 @@ const About = () => {
                   whileHover={{ scale: 1.1, y: -8 }}
                   className="text-center"
                 >
-                  <div className="w-20 h-20 gradient-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg text-3xl">
-                    {item.icon}
-                  </div>
                   <h4 className="font-semibold text-navy dark:text-white text-xl">{item.title}</h4>
                 </motion.div>
               ))}
@@ -228,9 +225,7 @@ const About = () => {
                 whileHover={{ y: -4, scale: 1.02 }}
                 className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
               >
-                <div className="flex-shrink-0 w-16 h-16 gradient-gold rounded-2xl flex items-center justify-center shadow-lg mb-6">
-                  <span className="text-navy font-bold text-2xl">✂️</span>
-                </div>
+               
                 <h3 className="text-2xl font-semibold text-navy dark:text-white mb-3">
                   Custom Cut-Size Services
                 </h3>
@@ -246,9 +241,7 @@ const About = () => {
                 whileHover={{ y: -4, scale: 1.02 }}
                 className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
               >
-                <div className="flex-shrink-0 w-16 h-16 gradient-gold rounded-2xl flex items-center justify-center shadow-lg mb-6">
-                  <span className="text-navy font-bold text-2xl">🏗️</span>
-                </div>
+                
                 <h3 className="text-2xl font-semibold text-navy dark:text-white mb-3">
                   Installation Support
                 </h3>
